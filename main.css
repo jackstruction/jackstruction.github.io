@@ -1,0 +1,140 @@
+*{margin: 0;padding: 0;}
+
+/*Base Section: Normal fonts and styling */
+h1, h2, h3, h4, h5, p, a{text-align: center;margin:0 0 0 0;}
+h1, h2, h3, h4, h5, label, Button, #footeremaillink, input, p{font-family: 'Mochiy Pop P One', sans-serif;}
+p, a{font-family: Roboto;}
+h1{font-size:48px;font-weight:700;}
+h2{font-size:32px;font-weight:500;}
+h3{font-size:24px;font-weight:400;}
+h4{font-size:18px;font-weight:400;}
+ p{font-size:15px;font-weight:300;}
+ input{font-size:12px;font-weight:200;}
+ /* Special Font resolutions */
+
+input, label{
+    margin: 5px 2% 5px 2%;
+    padding: 5px 1% 5px 1%;
+    width: 95%;
+}
+
+/* HEADER SPECIFIC STYLING SECTION */ 
+
+#headerlogo img{padding: 20px 0 0 20px;}
+#headerlogoimg{
+    width: 20%;
+    margin:15px 15px 0 15px;
+}
+
+.nav{
+    padding:10px 3% 10px 3%;
+    margin-top: 10px;
+    border: 3px solid greenyellow;
+    background-color: rgb(177, 120, 230);
+    border-radius: 25px;
+    color:greenyellow;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    
+}
+.navbar{
+    display:flex;
+    justify-content: flex-end;
+}
+#web3authinfo{background-color: white;
+padding:10px;
+margin: 5px;
+border-radius: 2px;}
+/* END HEADER */
+
+
+ /*SHORTCODES*/
+.row{display:flex;}
+.half{width:50%;}
+.third{width:33%}
+.center{text-align:center;}
+
+ /*  SPACING AND ALIGNMENT */
+ /* padding: above right below left */
+ header{margin:15px 15px 0 15px}
+ footer{margin:15px 15px 30px 15px}
+ h2, h4, p{text-align:center;}
+ /*button{
+    margin: 10px 0 10px 25%;
+    padding: 5px 10px 5px 10px;
+
+}*/
+
+.section{
+    margin:10px 15px 0 15px;
+    height: fit-content;
+    min-height:8em;}
+.aboutsec{margin-right:5px;}
+.scansec{margin-left:5px;}
+
+ /* SECTION BACKGROUND COLORS */
+html{background-color: black;}
+header{background-color: #ec3838;}
+.mintsec{background-color: aquamarine;}
+.adminsec{background-color: lightcoral;}
+.scansec{background-color: lightgreen;}
+.aboutsec{background-color: #3f48cc;}
+footer{background-color:lightsteelblue;}
+/* END SECTION BACKGROUND / COLORS */
+/* BODY STYLING */
+
+#aboutimg{
+    width:85%;
+    padding: 0 10%;
+    max-height: 290px;
+    max-width: 600px;   
+}
+
+
+form{padding: 0 15px;}
+
+Button{
+    margin: .5em 10%;
+    padding: .5em 1em .5em 1em;
+    font-size: small;
+    border-radius: 15px;
+    border-style: solid;
+    width: 80%
+}
+Button:active{
+    background-color:darkgrey;
+    border-color: lightgray;    
+}
+Button:hover{
+    background-color:lightblue;
+    border-color: lightgray;     
+}
+Button:hover:active{
+    background-color:darkgrey;
+    border-color: lightgray;    
+}
+
+/* END BODY STYLING */
+/* FOOTER SPECIFIC STYLING */
+
+#footeremail{padding-top: 15px;}
+#footeremaillink{
+    text-decoration:none;
+    color: #000000;
+}
+
+/* END FOOTER STYLING */
+@media (max-width: 670px) {
+    .navbar{display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+        flex-wrap: wrap;}
+    .row, .half{flex-wrap: wrap;width:100%}
+    #headerlogoimg{
+        margin:0 0 0 0;
+        
+    }
+    #headerlogo img{padding: 0px 0 0 20px;}
+    @media (max-width: 470px){#headerlogoimg{width:85%;}}
+  }
