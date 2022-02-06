@@ -1,9 +1,6 @@
 
 // Source code to interact with smart contract
 
-// Web3auth polygon start.
-//web3auth polygon end
-
 //connection with node
 var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545/'));
 // contractAddress and abi are setted after contract deploy
