@@ -2,7 +2,7 @@
 // Source code to interact with smart contract
 
 //connection with node
-var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mumbai.maticvigil.com/'));
+var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mumbai.maticvigil.com'));
 // contractAddress and abi are setted after contract deploy
 var contractAddress = '0x524e0ea548600768846d9cad66c5f26fae509a28';
 var abi = JSON.parse( '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"_scanner","type":"address"},{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"approveScanner","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_supply","type":"uint256"},{"internalType":"string","name":"_name","type":"string"},{"internalType":"uint256","name":"_price","type":"uint256"}],"name":"createEvent","outputs":[{"internalType":"uint256","name":"eventID","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"},{"internalType":"uint256","name":"_quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"pullFunds","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_scanner","type":"address"},{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"removeScanner","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"},{"internalType":"address","name":"_holderID","type":"address"},{"internalType":"uint256","name":"_quantity","type":"uint256"}],"name":"scan","outputs":[],"stateMutability":"nonpayable","type":"function"}]');
@@ -18,31 +18,13 @@ web3.eth.getAccounts(function(err, accounts) {
     return;
   }
   if (accounts.length == 0) {
-    alert("No account found! Make sure the Ethereum client is configured properly.");
+    alert("No account found! Make sure the client is configured properly.");
     return;
   }
   account = accounts[0];
   console.log('Account: ' + account);
   web3.eth.defaultAccount = account;
 });
-
-//Smart contract functions
-function registerSetInfo() {
-  info = $("#newInfo").val();
-  contract.methods.setMethod (info).send( {from: account}).then( function(tx) { 
-    console.log("Transaction: ", tx); 
-  });
-  $("#newInfo").val('');
-}
-
-function callfunction() {
-  contract.methods.callmethod().call().then( function( info ) { 
-    console.log("info: ", info);
-    document.getElementById('lastInfo').innerHTML = info;
-  });    
-}
-
-//Roadmap - Add Feedback to all buttons so user is not concerned 
 
 // approveScan - adds to the approved scanner list.
 function TCapproveScanner() {
