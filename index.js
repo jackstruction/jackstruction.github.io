@@ -2,9 +2,9 @@
 // Source code to interact with smart contract
 
 //connection with node
-var web3 = new Web3(new Web3.providers.HttpProvider('http://127.0.0.1:8545/'));
+var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mumbai.maticvigil.com/'));
 // contractAddress and abi are setted after contract deploy
-var contractAddress = '0xCfEB869F69431e42cdB54A4F4f105C19C080A601';
+var contractAddress = '0x524e0ea548600768846d9cad66c5f26fae509a28';
 var abi = JSON.parse( '[{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"_scanner","type":"address"},{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"approveScanner","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"_supply","type":"uint256"},{"internalType":"string","name":"_name","type":"string"},{"internalType":"uint256","name":"_price","type":"uint256"}],"name":"createEvent","outputs":[{"internalType":"uint256","name":"eventID","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"},{"internalType":"uint256","name":"_quantity","type":"uint256"}],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"pullFunds","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_scanner","type":"address"},{"internalType":"uint256","name":"eventID","type":"uint256"}],"name":"removeScanner","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"eventID","type":"uint256"},{"internalType":"address","name":"_holderID","type":"address"},{"internalType":"uint256","name":"_quantity","type":"uint256"}],"name":"scan","outputs":[],"stateMutability":"nonpayable","type":"function"}]');
 //contract instance
 contract = new web3.eth.Contract(abi, contractAddress);
