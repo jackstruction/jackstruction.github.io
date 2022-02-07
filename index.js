@@ -1,6 +1,31 @@
 
 // Source code to interact with smart contract
 
+// web3 provider with fallback for old version
+window.addEventListener('load', async () => {
+  // New web3 provider
+  if (window.ethereum) {
+      window.web3 = new Web3(ethereum);
+      try {
+          // ask user for permission
+          await ethereum.enable();
+          // user approved permission
+      } catch (error) {
+          // user rejected permission
+          console.log('user rejected permission');
+      }
+  }
+  // Old web3 provider
+  else if (window.web3) {
+      window.web3 = new Web3(web3.currentProvider);
+      // no need to ask for permission
+  }
+  // No web3 provider
+  else {
+      console.log('No web3 provider detected');
+  }
+});
+console.log (window.web3.currentProvider)
 //connection with node
 var web3 = new Web3(new Web3.providers.HttpProvider('https://rpc-mumbai.maticvigil.com'));
 // contractAddress and abi are setted after contract deploy
