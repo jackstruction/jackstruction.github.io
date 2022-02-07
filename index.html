@@ -46,7 +46,7 @@
             $("#logout").hide();
 
             web3AuthInstance = new web3authSdk.Web3Auth({
-                chainConfig: "eip155",
+                chainConfig: { chainNamespace: "eip155" },
                 clientId: "BLb3dZQMQdaAVAA85R4hVTbmkAQq5FghOpWbYP76fXDCPdO2SBFwSslTeMSkmM9zXIZqIFdqAeirvqd14OMjolo" // get your clientId from https://dashboard.web3auth.io
             });
         
