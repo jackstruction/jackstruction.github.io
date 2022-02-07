@@ -38,6 +38,15 @@
 </header>
 <body>
     <script>
+        const polygonMumbaiConfig: CustomChainConfig = {
+       chainNamespace: CHAIN_NAMESPACES.EIP155,
+       rpcTarget: "https://rpc-mumbai.maticvigil.com",
+       blockExplorer: "https://mumbai-explorer.matic.today",
+       chainId: "0x13881",
+       displayName: "Polygon Mumbai Testnet",
+       ticker: "matic",
+       tickerName: "matic",
+         };
         const web3authSdk = window.Web3auth
         let web3AuthInstance = null;
 
@@ -45,7 +54,7 @@
             $("#logout").hide();
 
             web3AuthInstance = new web3authSdk.Web3Auth({
-                chainConfig: { chainNamespace: "eip155" },
+                chainConfig: polygonMumbaiConfig,
                 clientId: "BLb3dZQMQdaAVAA85R4hVTbmkAQq5FghOpWbYP76fXDCPdO2SBFwSslTeMSkmM9zXIZqIFdqAeirvqd14OMjolo" // get your clientId from https://dashboard.web3auth.io
             });
         
